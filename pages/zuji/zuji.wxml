@@ -1,0 +1,50 @@
+<block wx:if="{{showModalStatus}}">
+    <view class="drawer_content_box" wx:if="{{showModalStatus}}">
+        <view class="drawer_content">
+            <image src="{{imagePath}}" style="width:100%;height:{{screenHeight}}px;"></image>
+        </view>
+        <view class="share-view" wx:if="{{shareObj}}">
+            <image bindtap="toshare" class="tu-block-image" mode="aspectFit" src="{{shareObj.image}}"></image>
+        </view>
+        <view class="drawer_btn_block">
+        <button class="save-img" openType="share">
+            <image class="btn-img" mode="aspectFit" src="../../images/share.png"></image>
+            <text style="color:#494848;font-size:10px">转发到群</text>
+        </button>
+        <button bindtap="saveImg" class="save-img">
+            <image class="btn-img" mode="aspectFit" src="../../images/friend.png"></image>
+            <text style="color:#494848;font-size:10px">分享好友</text>
+        </button>
+        <button bindtap="doCancel" class="save-img">
+            <image class="btn-img" mode="aspectFit" src="../../images/refresh.png"></image>
+            <text style="color:#494848;font-size:10px">重拾脚步</text>
+        </button>
+        <button openType="contact" class="save-img">
+            <image class="btn-img" mode="aspectFit" src="../../images/refresh.png"></image>
+            <navigator style="color:#494848;font-size:10px" target="miniProgram" open-type="navigate" app-id="wx8abaf00ee8c3202e" path="/pages/index-v2/index-v2" extra-data="{{ extraData }}" version="release">吐个槽</navigator>
+        </button>
+        </view>
+    </view>
+</block>
+<view class="container" wx:else>
+    <scroll-view class="left-container" scrollY="true" style="height: {{myheight}}px">
+        <view bindtap="provinceClick" class="{{item.cls}}" data-d="{{item.id}}" wx:for="{{province}}" wx:key="key">
+        {{item.name}}
+        <view class="count-view">
+                <view class="count-view-cur" wx:if="{{item.count>0}}">{{item.count}}</view>
+            </view>
+        </view>
+    </scroll-view>
+    <view>
+        <scroll-view scrollY="true" style="height: {{myheight-70}}px;">
+            <view class="right-container">
+                <view bindtap="cityClick" class="{{item.cls}}" data-d="{{item.id}}" data-p="{{item.pid}}" wx:for="{{city}}" wx:key="key">{{item.name}}</view>
+            </view>
+        </scroll-view>
+        <view class="right-footer">
+            <button bindgetuserinfo="doSubmit" class="submit-btn" openType="getUserInfo" type="primary">提 交</button>
+        </view>
+    </view>
+</view>
+<canvas canvasId="shareCanvas" class="drawer_content_canvas {{hiddenCanvas?'hidden-view':''}}" wx:if="{{iphone}}"></canvas>
+<canvas canvasId="shareCanvas" class="drawer_content_canvas" wx:else></canvas>

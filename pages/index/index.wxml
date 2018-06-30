@@ -1,0 +1,7 @@
+<view class="container">
+    <view class="title" style="margin-top:50px;">
+  <text>世界那么大</text>
+  </view>
+    <view class="title" style="margin-top:10px;">你曾路过多少风景</view>
+    <image class="chinamap" mode="aspectMode" src="../../images/chinamap.png"></image>
+</view>

@@ -1,0 +1,21 @@
+<view class="drawer_content_box" wx:if="{{showModalStatus}}">
+    <view class="drawer_content">
+        <image mode="aspectFit" src="{{imagePath}}" style="width:100%;height:{{screenHeight}}px;"></image>
+    </view>
+    <view class="drawer_btn_block">
+        <button class="save-img" openType="share">
+            <image class="btn-img" mode="aspectFit" src="../../images/share.png"></image>
+      转发到群
+      </button>
+        <button bindtap="saveImg" class="save-img">
+            <image class="btn-img" mode="aspectFit" src="../../images/friend.png"></image>
+      生成朋友圈分享图
+      </button>
+        <button bindtap="doCancel" class="save-img">
+            <image class="btn-img" mode="aspectFit" src="../../images/refresh.png"></image>
+            <text style="color:#494848">重选</text>
+        </button>
+    </view>
+</view>
+<image src="{{imagePath}}" style="width:100%;height:500px;"></image>
+<canvas canvasId="shareCanvas" class="drawer_content_canvas {{hiddenCanvas?'hidden-view':''}}"></canvas>

@@ -1,0 +1,16 @@
+<view>
+  <scroll-view scroll-y style="height:500px" class="container">
+    <view class="item" bindtap="zuji">
+      <view class="up-item-first"></view>
+      <view class="down-item-first"></view>
+    </view>
+    <view class="item">
+      <view class="up-item-second"></view>
+      <view class="down-item-second"></view>
+    </view>
+    <view class="item">
+      <view class="up-item-third"></view>
+      <view class="down-item-third"></view>
+    </view>
+  </scroll-view>
+</view>

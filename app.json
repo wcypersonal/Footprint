@@ -1,0 +1,16 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/zuji/zuji",
+        "pages/cavs/cavs",
+        "pages/main/main"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#0b1018",
+        "navigationBarTitleText": "标记脚步",
+        "navigationBarTextStyle": "white",
+        "backgroundColor": "#33689f"
+    }
+}
